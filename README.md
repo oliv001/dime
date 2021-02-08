@@ -1,3 +1,5 @@
 # dime
 
-this is a test.
+This is a platformer about multiple dimensions.
+
+By Andrew and Olivia
