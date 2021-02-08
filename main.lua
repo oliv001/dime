@@ -7,6 +7,13 @@ windowWidth, windowHeight = love.window.getDesktopDimensions()
 windowHeight = windowHeight * WINDOW_DESKTOP_RATIO
 windowWidth = windowHeight * 1.5 -- Ensures a 3:2 window ratio
 
+PLAYER_SPEED = 140
+
+-- Player. They will be a box for now
+player = {
+    x = VIRTUAL_WIDTH/2 - 5, y = VIRTUAL_HEIGHT - 10
+}
+
 
 function love.load()
     -- Display settings
@@ -23,12 +30,16 @@ end
 
 
 function love.keypressed(key)
-    
+
 end
 
 
 function love.draw()
     push:start()
+
+    love.graphics.clear(68/255, 94/255, 91/255, 150/255) --background
+    love.graphics.setColor(179/255, 235/255 , 193/255, 210/255) --player?? we can make them a square for now ig
+    love.graphics.rectangle('fill', player.x, player.y, 10, 10)
 
     push:finish()
 end
