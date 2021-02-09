@@ -11,7 +11,7 @@ PLAYER_SPEED = 140
 
 -- Player. They will be a box for now
 player = {
-    x = VIRTUAL_WIDTH/2 - 5, y = VIRTUAL_HEIGHT - 10
+    x = VIRTUAL_WIDTH/2 - 5, y = VIRTUAL_HEIGHT/2 - 5
 }
 
 
@@ -25,11 +25,16 @@ end
 
 
 function love.update(dt)
-
-end
-
-
-function love.keypressed(key)
+    -- Movement
+    if love.keyboard.isDown('w') then
+        player.y = player.y - PLAYER_SPEED * dt
+    elseif love.keyboard.isDown('s') then
+        player.y = player.y + PLAYER_SPEED * dt
+    elseif love.keyboard.isDown('a') then
+        player.x = player.x - PLAYER_SPEED * dt
+    elseif love.keyboard.isDown('d') then
+        player.x = player.x + PLAYER_SPEED * dt
+    end
 
 end
 
